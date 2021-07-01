@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+ <nav class="navbar navbar-inverse   navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <a class="navbar-brand" href="http://127.0.0.1:8000/">NFT</a>
+                </div>
+                <ul class="nav navbar-nav navbar-center">
+                    <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown">menu
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="">top</a></li>
+                            <li><a href="">offers</a></li>
+                        </ul>
+                    </li>
+                </ul>
+               <ul class="nav navbar-nav navbar-right">
+                   {% if user.is_authenticated %}
+                   <li><h3>hello,{{user.first_name}}</h3></li>
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>log out</a></li>
+                   {% else %}
+                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>log in</a></li>
+                   <li><a href="account/register" target="_blank"><span class="glyphicon glyphicon-user"></span> sign up</a></li>
+                    <li><a href="/cart/"><span class="glyphicon glyphicon-shopping-cart"></span> cart</a></li>
+                   {% endif %}
+               </ul>
+            </div>
+      </div>
+  </nav>
+
+<div class="qwe">
+     {% if user.is_authenticated %}
+      <h3>hello,{{user.first_name}}</h3>
+    {% else %}
+    {% endif %}
+
+</div>
+    <div class="jumbotron"  id="main">
+            {% if user.is_authenticated %}
+      <h3>hello,{{user.first_name}}</h3>
+    {% else %}
+    {% endif %}
+        </div>
+
+
+</body>
+</html>
